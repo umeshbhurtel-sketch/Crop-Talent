@@ -1,0 +1,334 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CorpTalents Brand Color System
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* ========== PRIMARY COLORS ========== */
+    /* Core Orange - Main Identity */
+    --orange-100: 20 100% 97%;
+    /* #FFF4EC - Softest */
+    --orange-200: 20 100% 85%;
+    /* #FFD9B8 */
+    --orange-300: 20 100% 73%;
+    /* #FFB780 */
+    --orange-400: 20 100% 60%;
+    /* #FF9A3C - Light */
+    --orange-500: 20 96% 54%;
+    /* #F58220 - Primary Orange (Main) */
+    --orange-600: 20 90% 45%;
+    /* #E56E10 - Hover */
+    --orange-700: 20 88% 40%;
+    /* #C65A0A - Dark */
+
+    /* ========== DARK CORPORATE ========== */
+    --dark-900: 240 32% 3%;
+    /* #020617 - Deepest */
+    --dark-800: 225 49% 13%;
+    /* #0F172A - Primary Dark (HEADINGS) */
+    --dark-700: 215 28% 17%;
+    /* #1E293B - Secondary Dark */
+    --dark-600: 210 22% 33%;
+    /* #334155 - Soft Text */
+    --dark-500: 210 18% 35%;
+    /* #475569 - Medium */
+
+    /* ========== NEUTRAL ========== */
+    --neutral-50: 0 0% 98%;
+    /* #FAFAFA - Section BG */
+    --neutral-100: 0 0% 96%;
+    /* #F5F5F5 - Light Gray */
+    --neutral-200: 220 13% 91%;
+    /* #E5E7EB - Border Gray */
+    --neutral-300: 220 14% 83%;
+    /* #D1D5DB */
+    --neutral-400: 220 9% 64%;
+    /* #9CA3AF */
+
+    /* ========== SEMANTIC COLORS ========== */
+    --background: 0 0% 100%;
+    /* White */
+    --foreground: 225 49% 13%;
+    /* Dark Blue #0F172A */
+
+    --card: 0 0% 100%;
+    /* White */
+    --card-foreground: 225 49% 13%;
+    /* Dark Blue */
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 49% 13%;
+
+    /* Primary (Orange - CTA & Accent) */
+    --primary: 20 96% 54%;
+    /* #F58220 */
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary (Soft Orange for backgrounds) */
+    --secondary: 20 100% 97%;
+    /* #FFF4EC */
+    --secondary-foreground: 225 49% 13%;
+
+    /* Accent (Active state) */
+    --accent: 20 96% 54%;
+    /* Same as primary */
+    --accent-foreground: 0 0% 100%;
+
+    /* Muted (Light gray) */
+    --muted: 0 0% 96%;
+    /* #F5F5F5 */
+    --muted-foreground: 210 22% 33%;
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 220 13% 91%;
+    /* #E5E7EB */
+    --input: 220 13% 91%;
+    --ring: 20 96% 54%;
+    /* Orange */
+
+    /* Dark theme setup */
+    --card-dark: 215 28% 17%;
+    /* #1E293B */
+    --canvas-dark: 225 49% 13%;
+    /* #0F172A */
+
+    /* Radius */
+    --radius: 0.875rem;
+    /* 14px - Corporate feel */
+
+    /* ========== GRADIENT TOKENS ========== */
+    --gradient-primary: linear-gradient(135deg, hsl(20 96% 54%) 0%, hsl(20 90% 45%) 100%);
+    --gradient-soft: linear-gradient(135deg, hsl(20 100% 97%) 0%, hsl(20 100% 85%) 100%);
+    --gradient-dark: linear-gradient(135deg, hsl(225 49% 13%) 0%, hsl(215 28% 17%) 100%);
+
+    /* ========== SHADOWS ========== */
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+    --shadow-md: 0 4px 6px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 10px 15px rgba(15, 23, 42, 0.1);
+    --shadow-xl: 0 20px 25px rgba(15, 23, 42, 0.12);
+    --shadow-2xl: 0 25px 50px rgba(15, 23, 42, 0.15);
+    --shadow-orange: 0 0 30px rgba(245, 130, 32, 0.2);
+
+    /* ========== TRANSITIONS ========== */
+    --transition-fast: all 0.2s ease-in-out;
+    --transition-normal: all 0.3s ease-in-out;
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 225 49% 13%;
+    /* Dark mode bg */
+    --foreground: 0 0% 100%;
+
+    --card: 215 28% 17%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 215 28% 17%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 20 96% 54%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 20 100% 97%;
+
+    --accent: 20 96% 54%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 210 18% 35%;
+    --muted-foreground: 220 13% 91%;
+
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 20 96% 54%;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-slide-in-down {
+    animation: slideInDown 0.3s ease-out;
+  }
+
+  .animate-glow-pulse {
+    animation: glowPulse 3s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2.5s linear infinite;
+    background-size: 200% 100%;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-padding {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  /* Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* ── Infinite marquee keyframes ────────────────────────────────── */
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-ltr {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

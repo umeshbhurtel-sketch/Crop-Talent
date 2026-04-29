@@ -1,0 +1,80 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to validate email format
+    function isValidEmail(email) {
+      return email.matches('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$');
+    }
+    
+    // Contact Form submissions
+    match /contactMessages/{messageId} {
+      // Allow anyone to create contact messages
+      allow create: if request.resource.data.keys().hasAll(['name', 'email', 'message', 'timestamp'])
+                    && request.resource.data.name is string
+                    && request.resource.data.name.size() > 0
+                    && request.resource.data.name.size() <= 100
+                    && isValidEmail(request.resource.data.email)
+                    && request.resource.data.email.size() <= 255
+                    && request.resource.data.message is string
+                    && request.resource.data.message.size() > 0
+                    && request.resource.data.message.size() <= 1000
+                    && request.resource.data.timestamp is timestamp;
+      
+      // Only authenticated admins can read
+      allow read: if false; // Update this when you implement authentication
+    }
+    
+    // Work With Us (Candidate) Form submissions
+    match /candidateLeads/{leadId} {
+      // Allow anyone to create candidate leads
+      allow create: if request.resource.data.keys().hasAll(['firstName', 'lastName', 'email', 'phone', 'timestamp'])
+                    && request.resource.data.firstName is string
+                    && request.resource.data.firstName.size() > 0
+                    && request.resource.data.firstName.size() <= 50
+                    && request.resource.data.lastName is string
+                    && request.resource.data.lastName.size() > 0
+                    && request.resource.data.lastName.size() <= 50
+                    && isValidEmail(request.resource.data.email)
+                    && request.resource.data.email.size() <= 255
+                    && request.resource.data.phone is string
+                    && request.resource.data.phone.size() > 0
+                    && request.resource.data.phone.size() <= 20
+                    && request.resource.data.timestamp is timestamp;
+      
+      // Only authenticated admins can read
+      allow read: if false; // Update this when you implement authentication
+    }
+    
+    // Hire Talent (Client) Form submissions - Multi-step form
+    match /clientLeads/{leadId} {
+      // Allow anyone to create client leads with the multi-step form structure
+      allow create: if request.resource.data.keys().hasAll(['companyName', 'contactPerson', 'email', 'phone', 'countryRegion', 'positions', 'gdprConsent', 'createdAt'])
+                    && request.resource.data.companyName is string
+                    && request.resource.data.companyName.size() > 0
+                    && request.resource.data.companyName.size() <= 100
+                    && request.resource.data.contactPerson is string
+                    && request.resource.data.contactPerson.size() > 0
+                    && request.resource.data.contactPerson.size() <= 100
+                    && isValidEmail(request.resource.data.email)
+                    && request.resource.data.email.size() <= 255
+                    && request.resource.data.phone is string
+                    && request.resource.data.phone.size() > 0
+                    && request.resource.data.phone.size() <= 30
+                    && request.resource.data.countryRegion is string
+                    && request.resource.data.positions is list
+                    && request.resource.data.positions.size() > 0
+                    && request.resource.data.gdprConsent == true
+                    && request.resource.data.createdAt is timestamp;
+      
+      // Only authenticated admins can read
+      allow read: if false; // Update this when you implement authentication
+    }
+    
+    // Deny all other collections by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
