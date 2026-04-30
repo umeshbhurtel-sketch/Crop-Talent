@@ -50,7 +50,7 @@ export default function CorpTalentsHeader() {
             <img
               src={cropLogoFull}
               alt="CorpTalents"
-              className="h-12 w-auto transition-opacity group-hover:opacity-90"
+              className="h-16 w-auto transition-opacity group-hover:opacity-90"
             />
           </Link>
 

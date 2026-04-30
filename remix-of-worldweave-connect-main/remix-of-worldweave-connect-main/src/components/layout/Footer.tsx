@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import cropLogo from "@/assets/icons/Crop_logo.png";
 
 export const Footer = () => {
   return (
@@ -9,11 +10,12 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* About Column */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">L</span>
-              </div>
-              <span className="font-bold text-lg">CorpTalents</span>
+            <div className="flex items-center space-x-3">
+              <img
+                src={cropLogo}
+                alt="Crop Talent"
+                className="h-24 w-auto"
+              />
             </div>
             <p className="text-sm text-muted-foreground">
               Global talent solutions connecting businesses with top-tier IT professionals worldwide.

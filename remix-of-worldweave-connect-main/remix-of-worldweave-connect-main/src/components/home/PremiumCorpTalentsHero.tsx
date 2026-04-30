@@ -90,30 +90,18 @@ export default function PremiumCorpTalentsHero() {
             href="https://mardilab.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full group/ml transition-all duration-200 hover:shadow-md"
+            className="inline-flex items-center px-4 py-2.5 rounded-full group/ml transition-all duration-200 hover:shadow-md hover:opacity-90"
             style={{
               backgroundColor: OT,
               border: "1px solid hsl(20 96% 54% / 0.25)",
             }}
-            aria-label="Powered by Mardi Lab LLC"
+            aria-label="Mardi Lab"
           >
-            <span className="text-sm font-medium whitespace-nowrap" style={{ color: BD }}>
-              Powered by
-            </span>
-
-            {/* Mardi Lab logo from local assets */}
             <img
               src={mardiLabLogo}
               alt="Mardi Lab"
-              className="h-5 w-auto flex-shrink-0"
+              className="h-7 w-auto flex-shrink-0"
             />
-
-            <span
-              className="text-sm font-semibold group-hover/ml:underline"
-              style={{ color: O }}
-            >
-              Mardi Lab LLC
-            </span>
           </a>
         </motion.div>
 
